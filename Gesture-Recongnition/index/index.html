@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Recognition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <center>
+            <h1>Hand Gesture Recognition</h1>
+            <div class="video-container">
+                <img src="/video" id="video-feed" alt="Video Feed">
+                <p id="caption">Waiting for hand gesture...</p>
+            </div>
+            <button onclick="startDetection()">Start Detection</button>
+            <video id="videoFeed" autoplay></video>
+        </center>
+    </div>
+
+    <script src="static/script.js"></script>
+    <script>
+        function updateCaption(text) {
+            const caption = document.getElementById("caption");
+            caption.innerText = text;
+            readAloud(text);
+        }
+
+        function readAloud(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-US"; // Set language
+            speech.rate = 1; // Adjust speed if necessary
+            window.speechSynthesis.speak(speech);
+        }
+
+        // Example: Call this function when a new gesture is detected
+        // updateCaption("Hello");
+    </script>
+</body>
+</html>
+

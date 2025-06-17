@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About - Silent Talk AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/png" href="asl_logo.ico" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn ease-in 1s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <header class="flex justify-between items-center p-6 fade-in">
+        <div class="text-pink-500 text-xl">Silent Talk AI</div>
+        <nav>
+            <ul class="flex space-x-6 text-white">
+                <li><a class="hover:text-pink-500" href="file:///D:/Gesture-Recongnition/index/indexpage1.html">Home</a></li>
+                <li><a class="hover:text-pink-500" href="#">About</a></li>
+                <li><a class="hover:text-pink-500" href="file:///D:/Gesture-Recongnition/login%20page/login1.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="flex flex-col items-center justify-center min-h-screen p-6 fade-in">
+        <div class="text-center max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold">About <span class="text-pink-500">Silent Talk AI</span></h1>
+            <p class="mt-4 text-gray-400">
+                Silent Talk AI is an advanced sign language recognition system designed to bridge communication gaps.
+                Our AI-driven gesture translator converts hand movements into text and speech, enabling seamless interactions.
+            </p>
+            <p class="mt-4 text-gray-400">
+                Whether you are deaf, hard of hearing, or simply interested in learning sign language, our platform provides
+                a powerful and intuitive experience.
+            </p>
+            <p class="mt-4 text-gray-400">
+                "Empowering Conversations, One Gesture at a Time."
+            </p>
+         
+        </div>
+    </main>
+</body>
+</html>

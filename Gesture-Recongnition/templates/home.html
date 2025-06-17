@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Silent Talk AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/png" href="asl_logo.ico"/>
+</head>
+<body class="bg-black text-white">
+    <header class="flex justify-between items-center p-6 fade-in">
+        <h1>Welcome, {{ user }}!</h1>
+        <a href="{{ url_for('gesture_page') }}">Start Gesture Detection</a><br><br>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        <div class="text-pink-500 text-xl">Silent Talk AI</div>
+        <nav>
+            <ul class="flex space-x-6 text-white">
+                <li><a class="hover:text-pink-500" href="{{ url_for('home') }}">Home</a></li>
+                <li><a class="hover:text-pink-500" href="{{ url_for('about') }}">About</a></li>
+                <li><a class="hover:text-pink-500" href="{{ url_for('login') }}">Admin</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex flex-col md:flex-row items-center justify-center min-h-screen p-6 fade-in">
+        <div class="md:w-1/2 flex justify-center">
+            <img alt="Logo" height="400" src="{{ url_for('static', filename='asl_logo.ico') }}" width="400"/>
+
+        </div>
+        <div class="md:w-1/2 text-center md:text-left mt-6 md:mt-0">
+            <h1 class="text-4xl md:text-5xl font-bold">Hi, It's <span class="text-pink-500">Silent Talk</span></h1>
+            <h2 class="text-2xl md:text-3xl mt-2">I'm a <span class="text-pink-500">Gesture Translator</span></h2>
+            <p class="mt-4 text-gray-400">"From Hands to Words – Breaking Barriers."</p>
+        </div>
+        <button id="start-btn" class="mt-6 px-6 py-2 border border-pink-500 text-pink-500 rounded-full hover:bg-pink-500 hover:text-white pulse">
+            Start
+        </button>
+    </main>
+    <style> 
+        body {
+    font-family: 'Roboto', sans-serif;
+}
+.fade-in {
+    opacity: 0;
+    animation: fadeIn ease-in 1s forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.bounce:hover {
+    animation: bounce 0.5s;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(236, 72, 153, 0.5); }
+}
+
+    </style>
+<script>
+    document.getElementById("start-btn").addEventListener("click", function() {
+        window.location.href = "http://127.0.0.1:5000/gesture";
+    });
+</script>
+
+    
+    
+</body>
+</html>

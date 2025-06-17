@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Silent Talk AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Header Section -->
+    <header class="flex justify-between items-center p-6 fixed w-full bg-black z-50 shadow-lg">
+        <div class="text-pink-500 text-xl font-bold">Silent Talk AI</div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a class="hover:text-pink-500" href="{{ url_for('home') }}">Home</a></li>
+                <li><a class="hover:text-pink-500" href="{{ url_for('about') }}">About</a></li>
+                <li><a class="hover:text-pink-500" href="{{ url_for('login') }}">Admin</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center text-center p-6 fade-in">
+        <div>
+            <h1 class="text-5xl font-bold text-pink-500">Welcome to Silent Talk AI</h1>
+            <p class="mt-4 text-gray-400 text-lg">Breaking communication barriers with AI-powered hand gesture recognition.</p>
+        </div>
+    </section>
+
+    <!-- About Silent Talk AI -->
+    <section class="p-12 text-center fade-in">
+        <h2 class="text-4xl font-bold text-white">What is Silent Talk AI?</h2>
+        <p class="mt-4 text-gray-400 text-lg max-w-3xl mx-auto">
+            Silent Talk AI is an innovative platform designed to help individuals with speech or hearing impairments communicate effortlessly. 
+            Using **AI-powered hand gesture recognition**, it translates gestures into text and speech, enabling seamless interactions.
+        </p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="p-12 fade-in">
+        <h2 class="text-4xl font-bold text-center">Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div class="p-6 border border-pink-500 rounded-lg text-center">
+                <i class="fas fa-hand-paper text-5xl text-pink-500"></i>
+                <h3 class="text-2xl mt-4">Gesture Recognition</h3>
+                <p class="text-gray-400">Detects and interprets hand gestures in real time.</p>
+            </div>
+            <div class="p-6 border border-pink-500 rounded-lg text-center">
+                <i class="fas fa-microphone-alt text-5xl text-pink-500"></i>
+                <h3 class="text-2xl mt-4">Speech Output</h3>
+                <p class="text-gray-400">Converts recognized text into speech for easier communication.</p>
+            </div>
+            <div class="p-6 border border-pink-500 rounded-lg text-center">
+                <i class="fas fa-globe text-5xl text-pink-500"></i>
+                <h3 class="text-2xl mt-4">Web-Based Interface</h3>
+                <p class="text-gray-400">Accessible from any device with an internet connection.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="p-12 text-center fade-in">
+        <h2 class="text-4xl font-bold">How It Works</h2>
+        <p class="mt-4 text-gray-400 text-lg">Follow these simple steps to start using Silent Talk AI.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div class="p-6 border border-gray-700 rounded-lg text-center">
+                <h3 class="text-2xl font-bold text-pink-500">Step 1</h3>
+                <p class="text-gray-400 mt-2">Allow camera access for hand detection.</p>
+            </div>
+            <div class="p-6 border border-gray-700 rounded-lg text-center">
+                <h3 class="text-2xl font-bold text-pink-500">Step 2</h3>
+                <p class="text-gray-400 mt-2">Perform hand gestures in front of the camera.</p>
+            </div>
+            <div class="p-6 border border-gray-700 rounded-lg text-center">
+                <h3 class="text-2xl font-bold text-pink-500">Step 3</h3>
+                <p class="text-gray-400 mt-2">View translated text or hear the spoken output.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center p-6 bg-black text-gray-400 mt-12">
+        &copy; 2025 Silent Talk AI. All rights reserved.
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const scrollHandler = () => {
+                fadeInElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add('visible');
+                    }
+                });
+            };
+            window.addEventListener("scroll", scrollHandler);
+            scrollHandler();
+        });
+
+        ScrollReveal().reveal('.fade-in', { duration: 1000, distance: '50px', origin: 'bottom', delay: 200 });
+    </script>
+</body>
+</html>
