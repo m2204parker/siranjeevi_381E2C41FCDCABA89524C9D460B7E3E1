@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Animation Demo</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      padding: 100px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .about { background-color: #dff0ea; }
+    .skills { background-color: #f6e7cb; }
+    .projects { background-color: #ded0f2; }
+    .contact { background-color: #f7c8c8; }
+  </style>
+</head>
+<body>
+
+  <section class="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I am a web developer passionate about animations!</p>
+  </section>
+
+  <section class="skills" data-aos="zoom-in">
+    <h2>Skills</h2>
+    <p>HTML, CSS, JavaScript, Python, Flask</p>
+  </section>
+
+  <section class="projects" data-aos="flip-left">
+    <h2>Projects</h2>
+    <p>Silent Talk AI, Snacks Website, E-commerce Platform</p>
+  </section>
+
+  <section class="contact" data-aos="fade-right">
+    <h2>Contact Me</h2>
+    <p>Email: example@example.com</p>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
