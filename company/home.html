@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SM Sweets & Snacks</title>
+    <link rel="shortcut icon" href="Screenshot 2025-04-14 100644.ico" type="image/x-icon">
+
+    <style>
+        body {
+            background-color: #e0bd9a;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: rgb(71, 7, 7);
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        nav img#logo {
+            width: 120px;
+        }
+    
+        nav li {
+            display: inline;
+        }
+        nav a {
+            color: white;
+            font-size: 18px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: gold;
+            transition: 0.5s;
+        }
+        nav button {
+            border: 2px solid white;
+            padding: 10px 20px;
+            background-color: transparent;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        nav button:hover {
+            border-color: gold;
+            color: gold;
+            transition: 0.5s;
+        }
+        #he {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 50px;
+            padding: 0 5%;
+        }
+        #text-content {
+            max-width: 50%;
+        }
+        h1 {
+            font-size: 48px;
+            color: goldenrod;
+            font-family: cursive;
+        }
+        p {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: black;
+            margin-top: 20px;
+        }
+        #place-order-btn {
+            margin-top: 100px;
+            margin-left: 400px;
+            padding: 12px 25px;
+            background-color: azure;
+            border: 2px solid brown;
+            border-radius: 30px;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #place-order-btn:hover {
+            background-color: brown;
+            color: white;
+            border-color: goldenrod;
+            transition: 0.5s;
+        }
+        #he img#ellu {
+            width: 500px;
+        }
+        footer {
+      
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #444;
+      margin-top: auto;
+    }
+
+#overlay{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position:absolute;
+    opacity: 0.8;
+    z-index: 1;
+    transition: 2s;
+    top: 0px;
+    left: 0px;
+    padding-bottom: 70%;
+    display: none ;
+}
+#pop{
+ background-image:url('https://img.freepik.com/premium-photo/bakery-pattern-wallpaper-background-featuring-assortment-fresh-pastries-baking-tools_1323992-571.jpg?semt=ais_hybrid&w=740');
+ position: absolute;
+ top: 5%;
+    left: 30%;
+    z-index: 2;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 350px;
+    transition: 2s;
+    display:none ;
+}
+#pop h2 {
+    text-align:left;
+    margin-bottom: 30px;
+    font-size: 25px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .input-group input, .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    padding-top: 20px;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+  }
+
+  .input-group label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #000000;
+    font-size: 14px;
+    pointer-events: none;
+    transition: 0.3s ease all;
+  }
+
+  .input-group input:focus + label,
+  .input-group input:not(:placeholder-shown) + label,
+  .input-group textarea:focus + label,
+  .input-group textarea:not(:placeholder-shown) + label {
+    top: -8px;
+    left: 10px;
+    font-size: 12px;
+    background: white;
+    padding: 0 4px;
+    color: #000000;
+  }
+
+  button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  #cancel-book {
+    background-color: #270202;
+  }
+
+  button:hover {
+    opacity: 0.9;
+  }
+  #pope {
+    background-image:url('https://img.freepik.com/premium-photo/bakery-pattern-wallpaper-background-featuring-assortment-fresh-pastries-baking-tools_1323992-571.jpg?semt=ais_hybrid&w=740');
+ position: absolute;
+ top: 25%;
+    left: 30%;
+    z-index: 2;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 350px;
+    transition: 2s;
+    display:none;
+  }
+
+  .snacks-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin: 60px 10%;
+    }
+
+    .snack-box {
+      width: 200px;
+      text-align: center;
+      padding: 15px;
+      border: 1px solid #555;
+      border-radius: 10px;
+      background-color: #fff8f0;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .snack-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .snack-box img:hover{
+      transform: scale(0.8);
+      transition: 1s;
+    }
+
+    .snack-box button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #270202;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .snack-box button:hover {
+      background-color: goldenrod;
+    }
+    h3
+    {
+      color: #470c0c;
+      display: inline;
+    }
+    h4{
+      display: inline;
+    }
+
+    </style>
+</head>
+
+<body onload="showUserWelcome()">
+  
+
+    <div id="tab">
+        <nav>
+            <img id="logo" src="Screenshot_2025-04-14_100245-removebg-preview.png">
+            <span id="username" style="color: white; margin-left: 20px;"></span>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <button onclick="log()">Admin</button>
+        </nav>
+    </div>
+    
+
+    <div id="he">
+      <div id="text-content">
+        
+        <h1>Welcome to SM Sweets & Snacks</h1>
+        <p id="welcome-line">Sweetness in every bite, Tradition in every heart.</p>
+    </div>
+    
+        <img id="ellu" src="7d036b9e82de43095e19102c8d940677-removebg-preview.png" alt="Sweet Image">
+    </div>
+    <!-- Snacks Display -->
+  <div class="snacks-container">
+    <div class="snack-box">
+      <img id="item" src="Thattai2.jpg" alt="Thattai Murukku">
+      <h5>Thattai Murukku</h5>
+      <button onclick="addToCart(this)">
+        <a href="product.html" style="text-decoration: none; color: inherit;">Add to Cart</a>
+      </button>
+    </div>
+    <div class="snack-box">
+      <img id="item" src="adhirasam-1.jpg" alt="Adhirasam">
+      <h5>Adhirasam</h5>
+      <button onclick="addToCart(this)">
+        <a href="product.html" style="text-decoration: none; color: inherit;">Add to Cart</a>
+      </button>
+      
+    </div>
+    <div class="snack-box">
+      <img id="item" src="Achappam_ambient.webp" alt="Achu Murukku">
+      <h5>Achu Murukku</h5>
+      <button onclick="addToCart(this)">
+        <a href="product.html" style="text-decoration: none; color: inherit;">Add to Cart</a>
+      </button>
+    </div>
+    <div class="snack-box">
+      <img id="item" src="thenkuzhal-murukku4.webp" alt="Murukku">
+      <h5>Murukku</h5>
+      <button onclick="addToCart(this)">
+        <a href="product.html" style="text-decoration: none; color: inherit;">Add to Cart</a>
+      </button>
+    </div>
+    <div class="snack-box">
+      <img id="item" src="DSC_0039.jpg" alt="Ellu Seedai">
+      <h5>Ellu Seedai</h5>
+      <button onclick="addToCart(this)">
+        <a href="product.html" style="text-decoration: none; color: inherit;">Add to Cart</a>
+      </button>
+    </div>
+    <div class="snack-box">
+      <img id="item" src="kara-boondi.webp" alt="Ellu Seedai">
+      <h5>Kara Boondi</h5>
+      <button onclick="addToCart(this)">
+        <a href="product.html" style="text-decoration: none; color: inherit;">Add to Cart</a>
+      </button>
+    </div>
+    <div class="snack-box">
+      <img id="item" src="7132a+dXr1L._SX679_.jpg" alt="Ellu Seedai">
+      <h5>Mixture</h5>
+      <button onclick="addToCart(this)">
+        <a href="product.html" style="text-decoration: none; color: inherit;">Add to Cart</a>
+      </button>
+    </div>
+    <div class="snack-box">
+      <img id="item" src="330aa355f6b545e0475c64da0d5e00c0.jpg" alt="Ellu Seedai">
+      <h5>Kara Chevu</h5>
+      <button onclick="addToCart(this)">
+        <a href="product.html" style="text-decoration: none; color: inherit;">Add to Cart</a>
+      </button>
+    </div>
+  </div>
+    <!-- Footer Section -->
+    <footer>
+      &copy; 2025 SM Sweets & Snacks | Crafted with love & tradition ❤️
+    </footer>
+  <div id="overlay"> </div>
+  <div id="pop">
+    <h2>Sign Up</h2>
+    <form>
+      <div class="input-group">
+        <input type="text" id="name" placeholder=" " required>
+        <label for="name">Full Name</label>
+      </div>
+  
+      <div class="input-group">
+        <input type="email" id="email" placeholder=" " required>
+        <label for="email">Email Address</label>
+      </div>
+  
+      <div class="input-group">
+        <input type="number" id="phone" placeholder=" " required>
+        <label for="phone">Phone No</label>
+      </div>
+  
+      <div class="input-group">
+        <textarea id="address" placeholder=" " required></textarea>
+        <label for="address">Address</label>
+      </div>
+  
+      <div class="input-group">
+        <input type="password" id="new_password" placeholder=" " required>
+        <label for="new_password">Password</label>
+      </div>
+  
+      <div class="input-group">
+        <input type="password" id="confirm_password" placeholder=" " required>
+        <label for="confirm_password">Confirm Password</label>
+      </div>
+  
+      <button id="add-book" onclick="sub()">Sign Up</button>
+      <button id="cancel-book" type="button" onclick="del()">Cancel</button>
+    </form>
+  </div>
+  <div id="pope">
+    <h2>Login</h2>
+    <form>
+      <div class="input-group">
+        <input type="email" id="email" placeholder=" " required>
+        <label for="email">Email Address</label>
+      </div>
+  
+      <div class="input-group">
+        <input type="password" id="password" placeholder=" " required>
+        <label for="password">Password</label>
+      </div>
+  
+      <button type="submit" id="login">Login</button>
+      <button type="button" id="cancel-book" onclick="del()">Cancel</button>
+      <h4>Create your account with<h3 onclick="sig()">SignUP!</h3></h4>
+    </form>
+  </div>
+  <script>
+    function addToCart(button) {
+      const img = button.parentElement.querySelector("img");
+      const name = button.parentElement.querySelector("h5");
+  
+      const imgSrc = img.getAttribute("src");
+      const snackName = name.textContent;
+  
+      // Save to localStorage
+      localStorage.setItem("selectedItem", imgSrc);
+      localStorage.setItem("selectedName", snackName);
+  
+      // Redirect
+      window.location.href = "product.html";
+    }
+  </script>
+  <script>
+      function showUserWelcome() {
+    const user = localStorage.getItem("smUser");
+    if (user) {
+        const msg = document.getElementById("welcome-line");
+        msg.innerHTML = `Hello, <strong>${user}</strong>! 😋<br>Sweetness in every bite, Tradition in every heart.`;
+    }
+}
+
+// Call this on load
+window.onload = showUserWelcome; function showUserWelcome() {
+    const user = localStorage.getItem("smUser");
+    if (user) {
+      document.getElementById("welcome-msg").innerText = `Hello, ${user}! 😋`;
+    }
+  }
+  
+  </script>
+  
+ <script src="script.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product</title>
+  <style>
+  body {
+            background-color: #e0bd9a;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: rgb(71, 7, 7);
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        nav img#logo {
+            width: 200px;
+        }
+       #order{
+        margin-left: 40%;
+        margin-top: 10%;
+        align-items: center;
+       }
+
+    .form-section {
+      margin: 40px auto 20px;
+      width: 50%;
+      background: #fff4ea;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-section label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .form-section input, .form-section select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #999;
+    }
+    #pro{
+      border-radius: 20px;
+    }
+
+    .form-section button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #420404;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .form-section button:hover {
+      background-color: #722020;
+    }
+
+    .table-section {
+      display: none;
+      margin: 20px auto;
+      width: 60%;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #orderBtn {
+      margin-top: 20px;
+    }
+
+    p#res {
+      text-align: center;
+      font-size: 16px;
+      color: #420404;
+      font-weight: bold;
+    }
+    #place-order-btn {
+            margin-top: 50px;
+            margin-left: 100px;
+            padding: 12px 25px;
+            background-color: azure;
+            border: 2px solid brown;
+            border-radius: 30px;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #place-order-btn:hover {
+            background-color: brown;
+            color: white;
+            border-color: goldenrod;
+            transition: 0.5s;
+        }
+        input{
+          border-radius: 20px;
+          background-color: transparent;
+          padding: 10px;
+        }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #444;
+      margin-top: auto;
+    }
+
+  </style>
+</head>
+<body>
+
+ 
+  <div id="tab">
+    <nav>
+        <img id="logo" src="Screenshot_2025-04-14_100245-removebg-preview.png">
+        
+    </nav>
+</div>
+<div id="order">
+  <img id="pro" src="" alt="Selected Snack Image" style="width: 300px;">
+
+<!-- Name display -->
+<h4 id="snack-name"></h4>
+
+<label>Quantity</label>
+<input type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
+
+<h3>Price: ₹<span id="price">20</span></h3>
+
+<button id="place-order-btn" onclick="placeOrder()">Place Order</button>
+
+ </div>
+
+
+
+  <footer>
+    &copy; 2025 SM Sweets & Snacks | Crafted with love & tradition ❤️
+  </footer>
+
+<!-- Inside body where image needs to show -->
+
+
+<script>
+window.onload = function () {
+  const selectedImage = localStorage.getItem("selectedItem");
+  const selectedName = localStorage.getItem("selectedName");
+
+  if (selectedImage) {
+    document.getElementById("pro").src = selectedImage;
+  }
+  if (selectedName) {
+    document.getElementById("snack-name").textContent = selectedName;
+  }
+
+  updatePrice(); // Initial price update
+}
+
+function updatePrice() {
+  const quantity = parseInt(document.getElementById("quantity").value);
+  const pricePerItem = 20;
+  const total = quantity * pricePerItem;
+  document.getElementById("price").textContent = total;
+}
+
+function placeOrder() {
+  const snack = document.getElementById("snack-name").textContent;
+  const quantity = parseInt(document.getElementById("quantity").value);
+  const totalPrice = quantity * 20;
+
+  alert(`Thank you for ordering ${snack}\nQuantity: ${quantity}\nTotal Price: ₹${totalPrice}`);
+}
+
+</script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

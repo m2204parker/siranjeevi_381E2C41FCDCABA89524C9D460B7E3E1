@@ -1,0 +1,199 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SM Sweets & Snacks</title>
+        <link rel="shortcut icon" href="Screenshot 2025-04-14 100644.ico" type="image/x-icon">
+        <body>
+            <div id="tab">
+                <nav>
+                    <img id="logo" src="Screenshot_2025-04-14_100245-removebg-preview.png">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    
+                </nav>
+            </div>
+            <style>
+                body {
+            background-color: #e0bd9a;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: rgb(71, 7, 7);
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        nav img#logo {
+            width: 120px;
+        }
+        nav li {
+            display: inline;
+        }
+        nav a {
+            color: white;
+            font-size: 18px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: gold;
+            transition: 0.5s;
+        }
+        nav button {
+            border: 2px solid white;
+            padding: 10px 20px;
+            background-color: transparent;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        nav button:hover {
+            border-color: gold;
+            color: gold;
+            transition: 0.5s;
+        }
+        .about-hero {
+  height: 100vh;
+  background: url('bg-sweets.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.about-hero .overlay {
+  padding: 60px;
+  border-radius: 12px;
+  color: #500a0a;
+}
+
+.about-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  margin: 0 0 15px;
+}
+
+.about-hero p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.about-wrapper {
+  padding: 60px 20px;
+}
+
+.about-section {
+  max-width: 900px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #b7863c;
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.about-section p.show,
+.about-section h2.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    .about-img {
+      width: 300px;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #444;
+      margin-top: auto;
+    }
+
+            </style>
+            <section class="about-hero">
+              <div class="overlay">
+                <h1>SM Sweets & Snacks</h1>
+                <p>Tradition Served with a Golden Touch</p>
+              </div>
+            </section>
+          
+            <!-- About Content -->
+            <section class="about-wrapper">
+              <div class="about-section">
+                <h2 class="animate">Excellence in Every Bite</h2>
+                <p class="animate">
+                  For over a decade, SM Sweets & Snacks has been a beacon of authentic South Indian flavors.
+                  Our journey began with a simple vision: to bring the taste of tradition to every household.
+                  Today, we stand as a testament to quality, purity, and the timeless appeal of Indian sweets and snacks.
+                </p>
+              </div>
+          
+              <div class="about-section">
+                <h2 class="animate">Crafted with Love and Tradition</h2>
+                <p class="animate">
+                  At SM, every delicacy is a labor of love. Our artisans, with years of experience, blend age-old recipes
+                  with the finest ingredients to create sweets that evoke cherished memories. Every bite tells a story.
+                </p>
+              </div>
+          
+              <div class="about-section">
+                <h2 class="animate">State-of-the-Art Production</h2>
+                <p class="animate">
+                  Our commitment to quality is unwavering. With a modern facility and traditional methods,
+                  we produce sweets that are both authentic and hygienic — pure joy in every bite.
+                </p>
+              </div>
+          
+              <div class="about-section">
+                <h2 class="animate">A Taste Beyond Borders</h2>
+                <p class="animate">
+                  SM Sweets & Snacks has reached hearts across the globe. Whether it's a festive celebration or
+                  a simple tea-time indulgence, our products are your companions in every joyous moment.
+                </p>
+                <img class="about-img" src="ChatGPT Image Apr 17, 2025, 05_37_33 PM.png">
+              </div>
+            </section>
+               
+              
+            
+              <!-- Footer -->
+              <footer>
+                &copy; 2025 SM Sweets & Snacks | Crafted with love & tradition ❤️
+              </footer>
+              
+  <script>
+    // Scroll animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    });
+
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+  </script>
+        </body>
+        
+</html>
